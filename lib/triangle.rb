@@ -1,4 +1,5 @@
 class Triangle
+end
   # write code here
   attr_accessor :side1, :side2, :side3, :kind
 
@@ -34,4 +35,3 @@ class TriangleError < StandardError
 
     end
   end
-end
