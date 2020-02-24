@@ -1,32 +1,34 @@
+require 'pry'
 class Triangle
-  def initialize(side_1,side_2,side_3)
-    @side_1 = side_1
-    @side_2 = side_2
-    @side_3 = side_3
+  # write code here
+  attr_accessor
+
+  def initialize(length1, length2, length3)
+    @length1 = length1
+    @length2 = length2
+    @length3 = length3
   end
 
-  def kind()
-    if (@side_1 <= 0) || (@side_2 <= 0) || (@side_3 <= 0)
-      raise TriangleError
-    elsif (@side_1+@side_2 <= @side_3) || (@side_1+@side_3 <= @side_2) || (@side_2+@side_3 <= @side_1)
-      raise TriangleError
-    else
-      if (@side_1 == @side_2) && (@side_2 == @side_3)
-        :equilateral
-      elsif (@side_1 == @side_2) || (@side_2 == @side_3) || (@side_1 == @side_3)
-        :isosceles
-      elsif (@side_1 != @side_2) && (@side_2 != @side_3) && (@side_1 != @side_3)
-        :scalene
+  def kind
+    if @length1 <= 0 || @length2 <= 0 || @length3 <= 0
+      begin
+        raise TriangleError
       end
+    elsif @length1 + @length2 <= @length3 || @length1 + @length3 <= @length2 || @length2 + @length3 <= @length1
+      begin
+        raise TriangleError
+      end
+    elsif @length1 == @length2 && @length2 == @length3
+        :equilateral
+    elsif @length1 == @length2 || @length2 == @length3 || @length1 == @length3
+        :isosceles
+    else @length1 != @length2 || @length2 != @length3 || @length1 != @length3
+        :scalene
     end
-
   end
 
-end
-
-class TriangleError < StandardError
-  # triangle error code
-  def message
-    "not a triangle"
+  class TriangleError < StandardError
   end
+
+
 end
