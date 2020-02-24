@@ -1,6 +1,6 @@
 class Triangle
   # write code here
-end 
+end
 	def initialize ( a,b,c)
 		@a = a
 		@b = b
@@ -17,7 +17,7 @@ end
 			end
 		else
 			raise TriangleError
-			#begin 
+			#begin
 			#	raise TriangleError
 			#rescue TriangleError => error
 			#	error.message
